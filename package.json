@@ -1,0 +1,25 @@
+{
+  "name": "react-es6-boilerplate",
+  "version": "1.0.0",
+  "description": "simple react and babel boilerplate to test components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
+    "babelify": "^7.3.0",
+    "browserify": "^14.1.0",
+    "watchify": "^3.9.0"
+  },
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "scripts": {
+    "start": "watchify -o dist/js/bundle.js -v -d src/js/app.js -t [ babelify --presets [ es2015 react ] ]"
+  }
+}
