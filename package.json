@@ -20,6 +20,9 @@
     "react-dom": "^15.4.2"
   },
   "scripts": {
-    "start": "watchify -o dist/js/bundle.js -v -d src/js/app.js -t [ babelify --presets [ es2015 react ] ]"
+    "js": "watchify -o dist/js/bundle.js -v -d src/js/app.js -t [ babelify --presets [ es2015 react ] ]",
+    "css": "catw -c 'node-sass' src/css/*.scss -o dist/css/style.css -v",
+    "web" :"http-server",
+    "start": "npm run web & npm run css & npm run js"
   }
 }
