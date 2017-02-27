@@ -22,8 +22,8 @@ class Main extends React.Component {
     );
   }
 
-  createProduct (name, detail, price) {
-    console.log('create product');
+  createProduct (product) {
+    console.log(product);
   }
 }
 
