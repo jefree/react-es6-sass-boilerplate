@@ -4,7 +4,10 @@
   "description": "simple react and babel boilerplate to test components",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "js": "mkdirp dist/js && watchify -o dist/js/bundle.js -v -d src/js/app.js -t [ babelify --presets [ es2015 react ] ]",
+    "css": "mkdirp dist/css && catw -c 'node-sass' src/css/*.scss -o dist/css/style.css -v",
+    "web": "live-server --watch=dist",
+    "start": "npm run web & npm run css & npm run js"
   },
   "author": "",
   "license": "ISC",
@@ -13,16 +16,14 @@
     "babel-preset-react": "^6.23.0",
     "babelify": "^7.3.0",
     "browserify": "^14.1.0",
+    "catw": "^1.0.1",
+    "live-server": "^1.2.0",
+    "mkdirp": "^0.5.1",
+    "node-sass": "^4.5.0",
     "watchify": "^3.9.0"
   },
   "dependencies": {
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
-  },
-  "scripts": {
-    "js": "watchify -o dist/js/bundle.js -v -d src/js/app.js -t [ babelify --presets [ es2015 react ] ]",
-    "css": "catw -c 'node-sass' src/css/*.scss -o dist/css/style.css -v",
-    "web" :"http-server",
-    "start": "npm run web & npm run css & npm run js"
   }
 }
